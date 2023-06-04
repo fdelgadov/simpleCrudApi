@@ -17,4 +17,15 @@ public class CatalogoService {
     public Catalogo saveCatalogo(Catalogo c) {
         return cr.save(c);
     }
+    
+    public boolean deleteCatalogo(Long id) {
+        try {
+            cr.deleteById(id);
+            return true;
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }    
 }
